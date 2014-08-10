@@ -15,3 +15,5 @@ regular expressions.  This has actually worked great for a number of projects
 I've applied it to.
 
 It should be easy to tweak this script to work for JavaScript as well.
+
+[madge]: https://github.com/pahen/madge
