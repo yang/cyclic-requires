@@ -1,0 +1,23 @@
+{
+  "name": "cyclic-requires",
+  "version": "0.0.0",
+  "description": "Scan your CoffeeScript node modules for cyclic require calls",
+  "main": "index.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yang/cyclic-requires.git"
+  },
+  "author": "Yang Zhang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yang/cyclic-requires/issues"
+  },
+  "homepage": "https://github.com/yang/cyclic-requires",
+  "dependencies": {
+    "glob": "^4.0.5",
+    "underscore": "^1.6.0"
+  }
+}
