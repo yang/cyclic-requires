@@ -19,5 +19,8 @@
   "dependencies": {
     "glob": "^4.0.5",
     "underscore": "^1.6.0"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.7.1"
   }
 }
