@@ -2,6 +2,9 @@ fs = require 'fs'
 Path = require 'path'
 glob = require 'glob'
 _ = require 'underscore'
+_.str = require 'underscore.string'
+_.mixin(_.str.exports())
+
 paths = process.argv.slice(2)
 if paths.length == 0
   throw new Error('must specify at least one root source file to scan')

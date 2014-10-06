@@ -18,7 +18,8 @@
   "homepage": "https://github.com/yang/cyclic-requires",
   "dependencies": {
     "glob": "^4.0.5",
-    "underscore": "^1.6.0"
+    "underscore": "^1.6.0",
+    "underscore.string": "^2.3.3"
   },
   "devDependencies": {
     "coffee-script": "^1.7.1"
