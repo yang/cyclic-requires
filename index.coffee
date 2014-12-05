@@ -30,6 +30,7 @@ while path = queue.pop()
   contents = fs.readFileSync(path)
   matches = (match while match = pattern.exec(contents))
   odeps = ("#{dir}/#{match[1]}" for match in matches when _(match[1]).startsWith('.'))
+  console.log odeps
   deps = (normalize("#{dep}.coffee") for dep in odeps when '.' not in Path.basename(dep))
   deps = deps.filter _.identity
   for dep in deps
@@ -42,7 +43,9 @@ chain = []
 console.log path2deps
 rec = (chain) ->
   node = _.last(chain)
-  throw new Error("found cycle: #{chain.map(Path.basename)}") if visiting[node]?
+  if visiting[node]?
+    console.log chain.map(Path.basename).join(' > ')
+    return
   visiting[node] = true
   for next in path2deps[node] ? []
     rec(chain.concat([next]))
