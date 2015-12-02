@@ -44,7 +44,7 @@ console.log path2deps
 rec = (chain) ->
   node = _.last(chain)
   if visiting[node]?
-    console.log chain.map(Path.basename).join(' > ')
+    console.log (Path.basename(part) for part in chain).join(' > ')
     return
   visiting[node] = true
   for next in path2deps[node] ? []
