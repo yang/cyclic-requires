@@ -5,6 +5,7 @@ _ = require 'underscore'
 _.str = require 'underscore.string'
 _.mixin(_.str.exports())
 
+verbose = false
 paths = process.argv.slice(2)
 if paths.length == 0
   throw new Error('must specify at least one root source file to scan')
@@ -30,7 +31,7 @@ while path = queue.pop()
   contents = fs.readFileSync(path)
   matches = (match while match = pattern.exec(contents))
   odeps = ("#{dir}/#{match[1]}" for match in matches when _(match[1]).startsWith('.'))
-  console.log odeps
+  console.log odeps if verbose
   deps = (normalize("#{dep}.coffee") for dep in odeps when '.' not in Path.basename(dep))
   deps = deps.filter _.identity
   for dep in deps
@@ -40,7 +41,7 @@ while path = queue.pop()
   path2deps[path] = deps
 visiting = {}
 chain = []
-console.log path2deps
+console.log path2deps if verbose
 rec = (chain) ->
   node = _.last(chain)
   if visiting[node]?
